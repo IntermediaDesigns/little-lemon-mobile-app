@@ -2,10 +2,11 @@ import { Link } from "expo-router";
 import React from "react";
 import { Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import Animated from 'react-native-reanimated'; // Ensure this import
 
 export default function Page() {
   return (
-    <View className="flex flex-1">
+    <View style={{ flex: 1 }}>
       <Header />
       <Content />
       <Footer />
@@ -15,24 +16,35 @@ export default function Page() {
 
 function Content() {
   return (
-    <View className="flex-1">
-      <View className="py-12 md:py-24 lg:py-32 xl:py-48">
-        <View className="px-4 md:px-6">
-          <View className="flex flex-col items-center gap-4 text-center">
+    <View style={{ flex: 1 }}>
+      <View style={{ paddingVertical: 48 }}>
+        <View style={{ paddingHorizontal: 16 }}>
+          <View style={{ alignItems: 'center', gap: 16, textAlign: 'center' }}>
             <Text
               role="heading"
-              className="text-3xl text-center native:text-5xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl"
+              style={{ fontSize: 48, fontWeight: 'bold', textAlign: 'center' }}
             >
               Welcome to Project ACME
             </Text>
-            <Text className="mx-auto max-w-[700px] text-lg text-center text-gray-500 md:text-xl dark:text-gray-400">
+            <Text style={{ maxWidth: 700, fontSize: 18, textAlign: 'center', color: 'gray' }}>
               Discover and collaborate on acme. Explore our services now.
             </Text>
 
-            <View className="gap-4">
+            <View style={{ gap: 16 }}>
               <Link
                 suppressHighlighting
-                className="flex h-9 items-center justify-center overflow-hidden rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 web:shadow ios:shadow transition-colors hover:bg-gray-900/90 active:bg-gray-400/90 web:focus-visible:outline-none web:focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+                style={{
+                  height: 36,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  borderRadius: 8,
+                  backgroundColor: 'black',
+                  paddingHorizontal: 16,
+                  paddingVertical: 8,
+                  fontSize: 14,
+                  color: 'white',
+                  transition: 'background-color 0.2s',
+                }}
                 href="/"
               >
                 Explore
@@ -49,27 +61,18 @@ function Header() {
   const { top } = useSafeAreaInsets();
   return (
     <View style={{ paddingTop: top }}>
-      <View className="px-4 lg:px-6 h-14 flex items-center flex-row justify-between ">
-        <Link className="font-bold flex-1 items-center justify-center" href="/">
+      <View style={{ paddingHorizontal: 16, height: 56, alignItems: 'center', flexDirection: 'row', justifyContent: 'space-between' }}>
+        <Link style={{ fontWeight: 'bold', flex: 1, alignItems: 'center', justifyContent: 'center' }} href="/">
           ACME
         </Link>
-        <View className="flex flex-row gap-4 sm:gap-6">
-          <Link
-            className="text-md font-medium hover:underline web:underline-offset-4"
-            href="/"
-          >
+        <View style={{ flexDirection: 'row', gap: 16 }}>
+          <Link style={{ fontSize: 16, fontWeight: 'medium', textDecorationLine: 'underline' }} href="/">
             About
           </Link>
-          <Link
-            className="text-md font-medium hover:underline web:underline-offset-4"
-            href="/"
-          >
+          <Link style={{ fontSize: 16, fontWeight: 'medium', textDecorationLine: 'underline' }} href="/">
             Product
           </Link>
-          <Link
-            className="text-md font-medium hover:underline web:underline-offset-4"
-            href="/"
-          >
+          <Link style={{ fontSize: 16, fontWeight: 'medium', textDecorationLine: 'underline' }} href="/">
             Pricing
           </Link>
         </View>
@@ -82,11 +85,10 @@ function Footer() {
   const { bottom } = useSafeAreaInsets();
   return (
     <View
-      className="flex shrink-0 bg-gray-100 native:hidden"
-      style={{ paddingBottom: bottom }}
+      style={{ flexShrink: 0, backgroundColor: 'gray', paddingBottom: bottom }}
     >
-      <View className="py-6 flex-1 items-start px-4 md:px-6 ">
-        <Text className={"text-center text-gray-700"}>
+      <View style={{ paddingVertical: 24, flex: 1, alignItems: 'start', paddingHorizontal: 16 }}>
+        <Text style={{ textAlign: 'center', color: 'gray' }}>
           © {new Date().getFullYear()} Me
         </Text>
       </View>
