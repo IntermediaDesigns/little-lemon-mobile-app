@@ -1,13 +1,17 @@
 import { Text, View } from 'react-native'
+import LittleLemonHeader from './components/LittleLemonHeader'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
+import LittleLemonFooter from './components/LittleLemonFooter'
 
 export default function Index () {
   return (
+    <SafeAreaProvider>
     <View>
-      <div className='flex items-center justify-center h-screen'>
-        <Text className='text-center text-4xl'>
-          Edit app/index.tsx to edit this screen.
-        </Text>
-      </div>
+      <View>
+        <LittleLemonHeader />
+      </View>
     </View>
+    <LittleLemonFooter />
+    </SafeAreaProvider>
   )
 }
