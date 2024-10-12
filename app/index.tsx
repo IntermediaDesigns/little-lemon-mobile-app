@@ -1,20 +1,15 @@
+import * as React from 'react'
 import LittleLemonFooter from '@/components/home/LittleLemonFooter'
 import LittleLemonHeader from '@/components/home/LittleLemonHeader'
-import { Text, View } from 'react-native'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
+import WelcomeScreen from '@/components/home/WelcomeScreen'
+import MenuItems from '@/components/menu/MenuItems'
 
 export default function Index () {
   return (
     <SafeAreaProvider>
       <LittleLemonHeader />
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: '#495E57',
-        }}
-      >
-        <Text>Edit app/index.tsx to edit this screen.</Text>
-      </View>
+      <WelcomeScreen />
       <LittleLemonFooter />
     </SafeAreaProvider>
   )

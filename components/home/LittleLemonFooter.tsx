@@ -1,8 +1,9 @@
 import { View, Text } from 'react-native'
+import * as React from 'react';
 
 export default function LittleLemonFooter () {
   return (
-    <View style={{ flex: 0.15, backgroundColor: '#F4CE14' }}>
+    <View style={{ flex: 0.10, backgroundColor: '#F4CE14' }}>
       <Text
         style={{
           bottom: 0,
