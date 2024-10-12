@@ -1,13 +1,8 @@
-# Expo React Native Template with Typescript and Nativewind v4
-
-## Latest version as of October 11, 2024
-
-- No additional folders or files, this is a plain boilerplate to start from scratch
-
-
-## Get started
+# Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+
+## Get started
 
 1. Install dependencies
 

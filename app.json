@@ -1,29 +1,23 @@
 {
   "expo": {
-    "name": "expo-react-native-nativewindv4-template",
-    "slug": "expo-react-native-nativewindv4-template",
+    "name": "little-lemon-mobile-app",
+    "slug": "little-lemon-mobile-app",
     "version": "1.0.0",
     "orientation": "portrait",
+
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
-    "splash": {
-      "backgroundColor": "#ffffff"
-    },
+
     "ios": {
       "supportsTablet": true
     },
-    "android": {
-      "adaptiveIcon": {
-        "backgroundColor": "#ffffff"
-      }
-    },
+
     "web": {
       "bundler": "metro",
-      "output": "static"
+      "output": "static",
+      "favicon": ""
     },
-    "plugins": [
-      "expo-router"
-    ],
+    "plugins": ["expo-router"],
     "experiments": {
       "typedRoutes": true
     }
